@@ -2,6 +2,7 @@ kind: Deployment
 apiVersion: app/v1
 metadata:
    name: mysql
+   namespace: expense
    # these labels are deployment related labels.
    labels: 
      component: nginx
