@@ -33,6 +33,7 @@ apiversion: v1
 kind: service
 metadata: 
  name: nginx
+ namespace: expense
 spec: 
  selector:
       name: front-end
