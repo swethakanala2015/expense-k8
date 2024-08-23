@@ -157,4 +157,4 @@ selector:
 ports:
     - protocol: TCP
       port: 80  #service-port
-      targetport: 80 #target-port
+      targetport: 8080 #target-port
