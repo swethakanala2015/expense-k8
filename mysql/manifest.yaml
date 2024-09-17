@@ -1,5 +1,5 @@
 kind: Deployment
-apiVersion: app/v1
+apiVersion: apps/v1v1
 metadata:
   name: mysql
   namespace: expense
@@ -8,7 +8,7 @@ metadata:
      component: nginx
      project: expense
      tier: database
-  spec:
+spec:
      replicas: 2
      selector:
         matchLabels:
@@ -16,16 +16,16 @@ metadata:
           project: expense
           tier: database
     # pod defination
-  template:
-  metadata: 
-    Labels:
+     template:
+        metadata: 
+     Labels:
       component: nginx
       project: expense
       tier: database
-spec:
-   containers:
-   - name: mysql
-     image: joindevops/mysql:v1.0
+     spec:
+        containers:
+          - name: mysql
+            image: joindevops/mysql:v1.0
 
 ---
 
