@@ -1,30 +1,30 @@
 kind: Deployment
-apiVersion: apps/v1v1
+apiVersion: apps/v1
 metadata:
   name: mysql
   namespace: expense
-   # these labels are deployment related labels.
-  labels: 
-     component: nginx
-     project: expense
-     tier: database
+  # these labels are deployment related labels
+  labels:
+    component: mysql
+    project: expense
+    tier: db
 spec:
-    replicas: 2
-    selector:
-      matchLabels:
-        component: nginx
+  replicas: 2
+  selector:
+    matchLabels:
+      component: mysql
+      project: expense
+      tier: db
+  # pod definition
+  template:
+    metadata:
+      labels:
+        component: mysql
         project: expense
-        tier: database
-        # pod defination
-    template:
-        metadata: 
-         Labels:
-          component: nginx
-          project: expense
-          tier: database
-        spec:
-        containers:
-        - name: mysql
+        tier: db
+    spec:
+      containers:
+      - name: mysql
         image: joindevops/mysql:v1.0
 
 ---
