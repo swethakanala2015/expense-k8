@@ -27,20 +27,5 @@ spec:
       - name: mysql
         image: joindevops/mysql:v1.0
 
----
 
-apiversion: v1
-kind: service
-metadata: 
- name: nginx
- namespace: expense
-spec: 
- selector:
-      name: front-end
-      project: expense
-      component: frontend
-      environment: dev
-ports:
-    - protocol: TCP
-      port: 3306  #service-port
-      targetport: 3306 #target-port
+
