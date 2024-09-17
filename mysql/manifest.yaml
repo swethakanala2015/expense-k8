@@ -9,23 +9,23 @@ metadata:
      project: expense
      tier: database
 spec:
-     replicas: 2
-     selector:
-        matchLabels:
+    replicas: 2
+    selector:
+      matchLabels:
+        component: nginx
+        project: expense
+        tier: database
+        # pod defination
+    template:
+        metadata: 
+         Labels:
           component: nginx
           project: expense
           tier: database
-    # pod defination
-     template:
-        metadata: 
-     Labels:
-      component: nginx
-      project: expense
-      tier: database
-     spec:
+        spec:
         containers:
-          - name: mysql
-            image: joindevops/mysql:v1.0
+        - name: mysql
+        image: joindevops/mysql:v1.0
 
 ---
 
